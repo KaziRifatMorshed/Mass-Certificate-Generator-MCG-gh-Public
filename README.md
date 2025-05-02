@@ -22,9 +22,9 @@ Source Code Link : [https://gitlab.com/KaziRifatMorshed/mass-certificate-generat
 
 # Visuals
 
-![](./extra/Screenshot_1.png)
+![](./Screenshot_1.png)
 
-![](./extra/output-ss.png)
+![](./output-ss.png)
 
 # How does it work?
 
