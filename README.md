@@ -24,8 +24,6 @@ Source Code Link : [https://gitlab.com/KaziRifatMorshed/mass-certificate-generat
 
 ![](./Screenshot_1.png)
 
-![](./output-ss.png)
-
 # How does it work?
 
 1. The program reads the configuration file `config.json` to get the required parameters for certificate generation.
