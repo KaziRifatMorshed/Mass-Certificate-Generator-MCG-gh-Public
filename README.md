@@ -10,29 +10,22 @@
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░ ░▒▓██████▓▒░
 ```
 
-# Description
-
 Mass Certificate Generator is a program to generate PDF certificates from a CSV file containing participant data, useful for university clubs and programs to create certificates within no time!
 
 **Project Page:** [https://kazirifatmorshed.github.io/projects/MassCertificateGenerator.html](https://kazirifatmorshed.github.io/projects/MassCertificateGenerator.html)
-
 Source Code Link : [https://gitlab.com/KaziRifatMorshed/mass-certificate-generator](https://gitlab.com/KaziRifatMorshed/mass-certificate-generator)
 
+You can download the following binaries:
+|Platform|Architecture|Link|
+|---|---|---|
+|Windows|AMD64|[Download](https://github.com/KaziRifatMorshed/Mass-Certificate-Generator-MCG-gh-Public/releases/download/v1.0/MassCertificateGenerator-v1.0-windows.exe)|
+|Linux (executable)|AMD64|[Download](https://github.com/KaziRifatMorshed/Mass-Certificate-Generator-MCG-gh-Public/releases/download/v1.0/MassCertificateGenerator-v1.0-linux)|
+|MacOS (Apple Silicon)|ARM|Upcoming|
+|Android|ARM|Planned|
 
 # Visuals
 
-![](./Screenshot_1.png)
-
-# Installation
-
-You can download the following binaries:
-
-|Platform|Architecture|Link|
-|---|---|---|
-|Windows|AMD64||
-|Linux (Appimage)|AMD64||
-|MacOS (Apple Silicon)|||
-|Android|ARM||
+![](./Screenshot_1_GUI.png)
 
 # Video Tutorial
 
