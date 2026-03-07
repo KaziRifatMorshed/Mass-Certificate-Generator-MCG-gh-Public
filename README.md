@@ -10,168 +10,124 @@
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░ ░▒▓██████▓▒░
 ```
 
-
-
 # Description
 
 Mass Certificate Generator is a program to generate PDF certificates from a CSV file containing participant data, useful for university clubs and programs to create certificates within no time!
 
+**Project Page:** [https://kazirifatmorshed.github.io/projects/MassCertificateGenerator.html](https://kazirifatmorshed.github.io/projects/MassCertificateGenerator.html)
+
 Source Code Link : [https://gitlab.com/KaziRifatMorshed/mass-certificate-generator](https://gitlab.com/KaziRifatMorshed/mass-certificate-generator)
 
-[//]: # (# Badges)
 
 # Visuals
 
 ![](./Screenshot_1.png)
 
-# How does it work?
-
-1. The program reads the configuration file `config.json` to get the required parameters for certificate generation.
-2. It reads the data from the CSV file specified in the configuration file.
-3. It uses the PDF template specified in the configuration file to generate the certificates.
-4. It generates the certificates in the specified format (PDF or PNG) and saves them in the specified output directory.
-5. It can generate either a single file with all certificates or individual files for each certificate, depending on the configuration.
-6. It can generate certificates in either horizontal or vertical orientation, depending on the configuration.
-7. It can generate certificates with a header, pre-body, body, and post-body text, depending on the configuration.
-
 # Installation
 
-# Usage
+You can download the following binaries:
+
+|Platform|Architecture|Link|
+|---|---|---|
+|Windows|AMD64||
+|Linux (Appimage)|AMD64||
+|MacOS (Apple Silicon)|||
+|Android|ARM||
+
+# Video Tutorial
+
+Click the YouTube video below:  
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0W1JGwzVvLk/0.jpg)](https://www.youtube.com/watch?v=0W1JGwzVvLk)
+
+# Features
+
+  1. Tabbed Pipeline Workflow
+	  MCG guides you through a logical sequence of steps using a tabbed interface:
+	   * Template Selection: Select the base PDF template.
+	   * Coordinate Calibration: Define text positioning, where the text will appear on the certificate.
+	   * Font Management: Import and manage custom fonts (TTF, OTF, WOFF).
+	   * Text Body Configuration: Define what text (constant or variable) to overlay.
+	   * Data Import: Load participant data from CSV or Excel files.
+	   * Export Settings: Configure output format and naming. You can save individual PDF or single file containing all certificate pages!
+
+
+  2. Real-time Live Preview
+	   * Dynamic Rendering & PDF Viewer: There is an integrated PDF viewer to show exactly how the final output will look, including font styles, colors, and positioning.
+	   * Debug Mode: Includes a toggle to visualize the text boundary boxes, helping with precise alignment.
+
+
+  3. Dynamic Font & Text Management
+	   * **Custom Fonts**: Users can add multiple custom font files and assign them nicknames for easy selection.
+	   * **Mixed Content**: Supports adding multiple "Text Blocks" which can be:
+	       * Variable: Pulled from specific columns in your imported data (e.g., "Full Name").
+	       * Constant: Static text that appears on every certificate.
+	   * **Styling Options**: Each text block supports individual settings for font, size, color, and formatting (Bold, Italic, Underline).
+	   * Reordering: A simple up/down movement system to change the stacking order of text blocks.
+	
+
+  4. Data Integration & Bulk Export
+	   * File Support: Import data from CSV or Excel (.xlsx, .xls).
+	   * **Flexible Output**:
+	       * Single File: Generate one large PDF containing all certificates.
+	       * Individual Files: Generate a separate PDF for each row of data.
+	   * Smart Naming: Choose a column from the data (like "Name" or "ID") to automatically name the individual exported PDF files.
+
+
+  5. Session Persistence
+	   * **Auto-Save/Load**: The application remembers your entire configuration—including file paths, font selections, text blocks, and coordinates—across sessions. If you close MCG, it will restore your exact
+	     progress when reopened.
 
 # Documentation
 
-You need to have knowledge of Python and [Path](https://www.redhat.com/en/blog/linux-path-absolute-relative) to run this
-program.
-The program will automatically check and install the required libraries.
 
-## Prerequisites
 
-You need to have Python 3.6 or higher installed on your system.
+## Run/compile from the source code
+
+You need to have Python 3.8 or higher installed on your system.
 You also need to have **pip** (Python package installer) installed. It usually comes with Python installations.
 
-### Design Input
+It is suggested to create a virtual environment for this purpose (using MCG in your machine).
 
-You have to design a template in PDF format for the certificate.
-This is your input file. You have to name it `input_template.pdf` which will be inside the `input` folder.
-
-### Data Input
-
-You have to create a CSV file with the `data` folder (which is inside `input` folder) for the certificate. The CSV file
-should have the following columns:
-
-```csv
-Name,Role
-"ABC","Convenor of Programming Contest Committee"
-"XYZ","General Secretary of Programming Contest Committee, Convenor of Prize & Gifts Committee"
-```
-
-If you want modifications in the CSV file, you can do that. You can add or remove columns as per your requirement. But
-You have to edit the CSV and Python code according to your requirements.
-
-## Configuration
-
-### Configuration File
-
-The configuration file is a JSON file that contains the following structure:
-
-```json
-{
-  "MCG_config": [
-    {
-      "configId": 1,
-      "debugMode": "on",
-      "dataPath": "./input/data/data.csv",
-      "templatePath": "./input/input_template.pdf",
-      "outputPath": "./output/",
-      "outputFileName": "output",
-      "outputFormat": "pdf",
-      "outputType": "individualFile",
-      "pageOrientation": "vertical",
-      "certificateHeader": "Certificate of Appreciation",
-      "certificatePreBody": "CLUSTER Club of Khulna University presents this Certificate of Appreciation to",
-      "certificateBody1": "In recognition of valuable participation as ",
-      "certificateBody2": " in the ",
-      "eventName": "National Symposium on Industry-Academia Collaboration for ICT-Enabled Bangladesh (SynergyX 2024).",
-      "certificatePostBody": "Your enthusiasm, creativity, and unwavering commitment played a vital role in the successful organization of the event. <br>We sincerely appreciate your dedication and impactful contribution."
-    }
-  ]
-}
-```
-
-### `config.json` explanation
-
-- `debugMode`: Set to `"on"` for debugging mode, which will draw the blue colour box for the user (who is generating the certificate) to check whether the box and the inner text fit the design or not. Set to `"off"` for
-  normal operation, which will not print the blue colour box.
-- `dataPath`: Path to the CSV file containing the data for certificate generation. It is `"./input/data/data.csv"` by de
-  default.
-- `templatePath`: Path to the PDF template file for the certificate. It is `"./input/input_template.pdf"` by default.
-- `outputPath`: Path to the directory where the generated certificates will be saved. It is `"./output/"` by default.
-- `outputFileName`: Base name for the generated certificate files.
-- `outputFormat`: Format of the generated certificates. Options are "pdf" or "png".
-- `outputType`: Type of output. Options are "singleFile" (all certificates in one file) or "individualFile" (each
-  certificate in a separate file).
-- `pageOrientation`: Orientation of the certificate. Options are "horizontal" or "vertical".
-- `certificateHeader`: Header text for the certificate.
-- `certificatePreBody`: Pre-body text for the certificate.
-- `certificateBody1`: Body text for the certificate.
-- `certificateBody2`: Additional body text for the certificate.
-- `eventName`: Name of the event for which the certificate is being issued.
-- `certificatePostBody`: Post-body text for the certificate.
-
-**NOTE: Do not remove `MCG_config` word from the JSON file. It is used to read the configuration file, which is
-hardcoded in Python script.**
-
-## Support
-
-Tell people where they can go for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
+# Roadmap
 
 - [x] Change Debug Mode
 - [x] Single File Output
-- [x] Individual File Output
-- [ ] Change Paper Size
-- [ ] Change Paper Orientation
-- [ ] Change Output Format
-- [ ] Change Output Type
-- [ ] Change Output File Name
-- [ ] Change Output Path
-- [ ] Change Template Path
-- [ ] Change Data Path
-- [ ] Change Header Text
-- [ ] Change Pre Body Text
-- [ ] Change Body Text 1
-- [ ] Change Body Text 2
-- [ ] Change Event Name
-- [ ] Change Post Body Text
-- [ ] Change Font Size
-- [ ] Change Font Style
-- [ ] Change Text Colour
-- [ ] Change Text Alignment
-- [ ] Change Text Position
-- [ ] GUI Implementation
+- [x] Individual Files Output
+- [x] Change Paper Size
+- [x] Change Paper Orientation
+- [x] Change Output Format
+- [x] Change Output File Name (based on variables)
+- [x] Change Output Path
+- [x] Change Template Path
+- [x] Change Data Path
+- [ ] Android Support
+- [ ] MacOS Support
 
-## Contributing
+## Contribution
 
-## Authors and acknowledgement
+If you want to contribute, Fork it, Work on your own repo and Push it!
 
-### Author
+# Authors and acknowledgement
+
+## Author
 
 - **Name**: Kazi Rifat Morshed
 - **Affiliation**: Computer Science and Engineering Discipline
 - **Alma Mater**: [Khulna University](https://www.ku.ac.bd)
-- **Email**: 230220@ku.ac.bd
+- **Email**: rifat230220@cseku.ac.bd
 - **Website**: [https://kazirifatmorshed.github.io](https://kazirifatmorshed.github.io)
 
-### Acknowledgment
+## Acknowledgment
 
 - [pymupdf](https://pymupdf.readthedocs.io/en/latest/)
+- [qt](https://qt.io/)
+- [Github Copilot](), [Gemini]()
 
-## License
+# License
 
-You can edit the code to make a modified version to suit your requirements. But you have to acknowledge this repo.
+The Apache License 2.0 is a permissive open-source license that allows users to use, modify, and distribute software with minimal restrictions. It requires that any distributed modifications include a notice of changes and maintain the original copyright and license notices.
 
-## Project status
+# Project status
 
-First release: 1 May 2025
-Current Status: Ready to use and planned features under development
+First release: 1 May 2025  
+Current Status: GUI implementation during Ramadan 2026.
