@@ -86,16 +86,22 @@ It is suggested to create a virtual environment for this purpose (using MCG in y
 - [x] Change Debug Mode
 - [x] Single File Output
 - [x] Individual Files Output
-- [x] Change Paper Size
+- [x] Change Paper Size (Dynamic, any size)
 - [x] Change Paper Orientation
 - [x] Change Output Format
 - [x] Change Output File Name (based on variables)
 - [x] Change Output Path
 - [x] Change Template Path
 - [x] Change Data Path
+- [x] PDF, PNG, JPEG output
+- [ ] Improve UX
+- [ ] Add more instructions in UI (like template size is dynamic)
+- [ ] Auto generate certificate verifications credentials
+- [ ] Add QR code to certificate for scanning
+- [ ] Auto update notifier
+- [ ] Auto update manager
 - [ ] Android Support
 - [ ] MacOS Support
-
 ## Contribution
 
 If you want to contribute, Fork it, Work on your own repo and Push it!
