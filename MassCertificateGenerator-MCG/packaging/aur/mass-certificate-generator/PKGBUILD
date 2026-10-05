@@ -1,0 +1,48 @@
+# Maintainer: Kazi Rifat Morshed <kazirifatmorshed@gmail.com>
+pkgname=mass-certificate-generator
+pkgver=1.1.0
+pkgrel=1
+pkgdesc="Batch certificate generator with custom fonts, layouts, and CSV/Excel data"
+arch=('any')
+url="https://github.com/kazirifatmorshed/MassCertificateGenerator-MCG"
+license=('Apache-2.0')
+depends=(
+    'python'
+    'pyside6'
+    'python-pymupdf'
+    'python-pandas'
+    'python-openpyxl'
+    'hicolor-icon-theme'
+)
+makedepends=('git')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/kazirifatmorshed/MassCertificateGenerator-MCG/archive/refs/tags/v$pkgver.tar.gz"
+        "mass-certificate-generator.desktop")
+sha256sums=('SKIP'
+            'SKIP')
+
+package() {
+    cd "MassCertificateGenerator-MCG-${pkgver}/MassCertificateGenerator-MCG"
+
+    local appdir="${pkgdir}/usr/share/${pkgname}"
+    install -dm755 "${appdir}"
+
+    # Install Python application files and assets
+    cp -r models extra version.py ui_mainWindow.py mainwindow.py main.py "${appdir}/"
+
+    # Install launcher script into /usr/bin
+    install -dm755 "${pkgdir}/usr/bin"
+    cat << 'EOF' > "${pkgdir}/usr/bin/mass-certificate-generator"
+#!/usr/bin/env bash
+exec /usr/bin/python3 /usr/share/mass-certificate-generator/main.py "$@"
+EOF
+    chmod 755 "${pkgdir}/usr/bin/mass-certificate-generator"
+    ln -sf /usr/bin/mass-certificate-generator "${pkgdir}/usr/bin/MassCertificateGenerator"
+
+    # Install desktop entry
+    install -Dm644 "${srcdir}/mass-certificate-generator.desktop" \
+        "${pkgdir}/usr/share/applications/mass-certificate-generator.desktop"
+
+    # Install icon
+    install -Dm644 extra/MCG_logo.png \
+        "${pkgdir}/usr/share/icons/hicolor/256x256/apps/mass-certificate-generator.png"
+}

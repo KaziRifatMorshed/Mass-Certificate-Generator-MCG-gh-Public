@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Mass Certificate Generator
+GenericName=Certificate Generator
+Comment=Generate bulk certificates with custom fonts, layouts, and CSV/Excel data
+Exec=mass-certificate-generator %F
+Icon=mass-certificate-generator
+Terminal=false
+Categories=Office;Publishing;Graphics;Utility;
+Keywords=certificate;pdf;generator;bulk;batch;
+StartupNotify=true

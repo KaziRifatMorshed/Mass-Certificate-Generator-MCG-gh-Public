@@ -1,0 +1,17 @@
+[project]
+name = "MassCertificateGenerator-MCG"
+
+[tool.pyside6-project]
+files = [
+    "mainWindow.ui",
+    "mainwindow.py",
+    "resourcs.qrc",
+    "models/__init__.py",
+    "models/enums.py",
+    "models/singleton.py",
+    "models/font.py",
+    "models/texts.py",
+    "models/certificate.py",
+    "models/importer.py",
+    "models/exporter.py",
+]

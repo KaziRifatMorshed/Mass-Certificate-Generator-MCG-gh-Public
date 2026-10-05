@@ -1,0 +1,41 @@
+Mass Certificate Generator v1.0 RELEASED!!
+Alhamdulillah, after a year, I have completed my abandoned bulk certificate generation Python project during this Ramadan vacation. This might be useful for Certificate and ID Card (Text-Based) generation, either a single file (print-friendly) or individual files (for everyone), useful for clubs and organizations.
+
+Details, Tutorial & Download Link: https://kazirifatmorshed.github.io/projects/MassCertificateGenerator.html
+
+Features:
+
+1. Tabbed Pipeline Workflow
+Template Selection: Select the base PDF template.
+Coordinate Calibration: Define text positioning, where the text will appear on the certificate.
+Font Management: Import and manage custom fonts (TTF, OTF, WOFF).
+Text Body Configuration: Define what text (constant or variable) to overlay.
+Data Import: Load participant data from CSV or Excel files.
+Export Settings: Configure output format and naming. You can save individual PDF or single file containing all certificate pages!
+
+2. Real-time Live Preview
+Dynamic Rendering & PDF Viewer: There is an integrated PDF viewer to show exactly how the final output will look, including font styles, colors, and positioning.
+Debug Mode: Includes a toggle to visualize the text boundary boxes, helping with precise alignment.
+
+3. Dynamic Font & Text Management
+Custom Fonts: Users can add multiple custom font files and assign them nicknames for easy selection.
+Mixed Content: Supports adding multiple "Text Blocks" which can be:
+Variable: Pulled from specific columns in your imported data (e.g., "Full Name").
+Constant: Static text that appears on every certificate.
+Styling Options: Each text block supports individual settings for font, size, color, and formatting (Bold, Italic, Underline).
+Reordering: A simple up/down movement system to change the stacking order of text blocks.
+
+4. Data Integration & Bulk Export
+File Support: Import data from CSV or Excel (.xlsx, .xls).
+Flexible Output:
+Single File: Generate one large PDF containing all certificates.
+Individual Files: Generate a separate PDF for each row of data.
+Smart Naming: Choose a column from the data (like "Name" or "ID") to automatically name the individual exported PDF files.
+
+5. Session Persistence
+Auto-Save/Load: The application remembers your entire configuration—including file paths, font selections, text blocks, and coordinates—across sessions. If you close MCG, it will restore your exact progress when reopened.
+
+
+ক্লাব/প্রোগ্রামের সবার সার্টিফিকেট তৈরি/প্রিন্ট করার সহজ সমাধান Mass Certificate Generator (MCG)
+
+২০২৫ সালের মে মাসে আমি একটা পাইথন স্ক্রিপ্ট দিয়ে এই প্রোজেক্টের কাজ শুরু করেছিলাম। আলহামদুল্লিল্লাহ, এই রমজানের ছুটিতে প্রোজেক্ট GUI ইমপ্লিমেন্ট করে কমপ্লিট করতে পেরেছি। আপনার কাছে কানভা/ইলাস্ট্রেটরে বানানো PDF ডিজাইন আর Google Form থেকে প্রাপ্ত সবার Excel ডাটা থাকলে সহজেই সবার জন্য PDF/JPEG সার্টিফিকেট বা আইডি কার্ড তৈরি করতে পারবেন। MCG একটা সিঙ্গেল ফাইলে (একটা ফাইল প্রিন্ট করার জন্য সহজ) বা সবার নাম অনুযায়ী আলাদা আলাদা ফাইলে আউটপুট দিতে পারে। সার্টিফিকেট এর টেক্সট আপনার প্রয়োজনমতো লোকেশনে ডাইনামিকভাবে, আলাদা ফন্টে, ভিন্নভিন্ন কালার ও সাইজে সাজিয়ে নিতে পারবেন।

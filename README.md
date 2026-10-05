@@ -10,123 +10,154 @@
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░ ░▒▓██████▓▒░
 ```
 
-Mass Certificate Generator is a program to generate PDF certificates from a CSV file containing participant data, useful for university clubs and programs to create certificates within no time!
+# Description
 
-**Project Page:** [https://kazirifatmorshed.github.io/projects/MassCertificateGenerator.html](https://kazirifatmorshed.github.io/projects/MassCertificateGenerator.html)
-Source Code Link : [https://gitlab.com/KaziRifatMorshed/mass-certificate-generator](https://gitlab.com/KaziRifatMorshed/mass-certificate-generator)
+**Mass Certificate Generator (MCG)** is a modern, high-performance desktop application to generate bulk PDF and image certificates dynamically from CSV or Excel data. Designed for university clubs, conferences, workshops, and educational programs to produce hundreds of customized certificates in seconds!
 
-You can download the following binaries:
-|Platform|Architecture|Link|
+- **Project Page:** [https://kazirifatmorshed.github.io/projects/MassCertificateGenerator.html](https://kazirifatmorshed.github.io/projects/MassCertificateGenerator.html)
+- **Repository (GitHub):** [https://github.com/KaziRifatMorshed/Mass-Certificate-Generator-MCG-gh-Public](https://github.com/KaziRifatMorshed/Mass-Certificate-Generator-MCG-gh-Public)
+- **Repository (GitLab):** [https://gitlab.com/KaziRifatMorshed/mass-certificate-generator](https://gitlab.com/KaziRifatMorshed/mass-certificate-generator)
+
+<!-- # Visuals -->
+
+![](./MassCertificateGenerator-MCG/extra/Screenshot_1_GUI.png)
+
+# Installation & Downloads
+
+Pre-built releases for **v1.1.0** are available across platforms:
+
+| Platform | Format / Architecture | Source / Command |
 |---|---|---|
-|Windows|AMD64|[Download](https://github.com/KaziRifatMorshed/Mass-Certificate-Generator-MCG-gh-Public/releases/download/v1.0/MassCertificateGenerator-v1.0-windows.exe)|
-|Linux (executable)|AMD64|[Download](https://github.com/KaziRifatMorshed/Mass-Certificate-Generator-MCG-gh-Public/releases/download/v1.0/MassCertificateGenerator-v1.0-linux)|
-|MacOS (Apple Silicon)|ARM|Upcoming|
-|Android|ARM|Planned|
+| **Windows** | Windows Installer Setup (`.exe`) | [Download](https://github.com/KaziRifatMorshed/Mass-Certificate-Generator-MCG-gh-Public/releases/download/v1.1.0/MassCertificateGenerator-v1.1.0-Setup.exe) |
+| **Windows** | Standalone Executable (`.exe`) | [Download](https://github.com/KaziRifatMorshed/Mass-Certificate-Generator-MCG-gh-Public/releases/download/v1.1.0/MassCertificateGenerator-v1.1.0-windows.exe) |
+| **Arch Linux / Manjaro** | Arch User Repository (AUR) | `yay -S mass-certificate-generator` |
+| **Linux (Universal)** | Standalone Binary (`.tar.gz`) | [Download](https://github.com/KaziRifatMorshed/Mass-Certificate-Generator-MCG-gh-Public/releases/download/v1.1.0/MassCertificateGenerator-v1.1.0-linux-x86_64.tar.gz) |
+| **macOS (Apple Silicon)** | DMG / App Bundle | Upcoming |
+| **Android** | APK | Planned |
 
-# Visuals
+### Arch Linux / Manjaro (AUR)
 
-![](./Screenshot_1_GUI.png)
+MCG is packaged for Arch Linux users via the AUR:
+
+```bash
+# Native package (recommended, lightweight)
+yay -S mass-certificate-generator
+
+# Or using paru
+paru -S mass-certificate-generator
+```
 
 # Video Tutorial
 
-Click the YouTube video below:  
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0W1JGwzVvLk/0.jpg)](https://www.youtube.com/watch?v=0W1JGwzVvLk)
+Click below to watch the video demonstration and tutorial:  
+[![Video Tutorial](https://img.youtube.com/vi/0W1JGwzVvLk/0.jpg)](https://www.youtube.com/playlist?list=PLTkxHCc7JjF0QC4yZf5OXDyFlfzSJvK1v)
 
-# Features
+# Key Features
 
-  1. Tabbed Pipeline Workflow
-	  MCG guides you through a logical sequence of steps using a tabbed interface:
-	   * Template Selection: Select the base PDF template.
-	   * Coordinate Calibration: Define text positioning, where the text will appear on the certificate.
-	   * Font Management: Import and manage custom fonts (TTF, OTF, WOFF).
-	   * Text Body Configuration: Define what text (constant or variable) to overlay.
-	   * Data Import: Load participant data from CSV or Excel files.
-	   * Export Settings: Configure output format and naming. You can save individual PDF or single file containing all certificate pages!
+### 1. Tabbed Pipeline Workflow
+MCG guides you sequentially through an intuitive setup process:
+* **Template Selection:** Load any custom PDF certificate template (supports any dimensions and orientations).
+* **Coordinate Calibration:** Interactively define text boundaries and target positioning on the template using percentage-based bounding coordinates.
+* **Font Management:** Add and manage custom TrueType (`.ttf`), OpenType (`.otf`), and Collection (`.ttc`) fonts with real-time embedding support.
+* **Text Body Configuration:** Combine dynamic data layers (mapped to CSV/Excel columns) and static text with individualized fonts, sizes, formatting (Bold, Italic, Underline), and colors.
+* **Data Import:** Read participant data effortlessly from `.csv` or `.xlsx` files with column auto-detection.
+* **Export Settings:** Choose individual files named by recipient column or a single aggregated multi-page document, with PDF, PNG, and JPEG export formats.
 
+### 2. Fully Event-Driven & Real-Time Sync
+* **Zero Manual "Save" Hassles:** Font additions, font renaming, text changes, size tweaks, and style changes update dynamically in real time.
+* **Instant Visual Preview:** Integrated PDF rendering updates immediately upon any change without manual refreshing.
+* **Non-Destructive Font Renaming:** Renaming custom fonts updates all dependent text layers automatically without breaking configurations.
 
-  2. Real-time Live Preview
-	   * Dynamic Rendering & PDF Viewer: There is an integrated PDF viewer to show exactly how the final output will look, including font styles, colors, and positioning.
-	   * Debug Mode: Includes a toggle to visualize the text boundary boxes, helping with precise alignment.
+### 3. Robust Font Engine & Fault Tolerance
+* **Automatic Embedding Sanitization:** Automatically detects and clears OS/2 table embedding restrictions (`fsType`) in memory/cache to prevent PDF engine substitute-font crashes.
+* **TrueType Collection (.ttc) Support:** Full parsing and sanitization for multi-font collection files.
+* **3-Tier Rendering Fallback:** If custom fonts fail or are missing, MCG automatically falls back to clean HTML styling, followed by standard PDF Base-14 fonts, ensuring export jobs never abort unexpectedly.
 
+### 4. Non-Destructive Live Debug Mode
+* Visual blue bounding box helps calibrate layout boundaries in the interactive preview without ever appearing in exported PDF/image files.
 
-  3. Dynamic Font & Text Management
-	   * **Custom Fonts**: Users can add multiple custom font files and assign them nicknames for easy selection.
-	   * **Mixed Content**: Supports adding multiple "Text Blocks" which can be:
-	       * Variable: Pulled from specific columns in your imported data (e.g., "Full Name").
-	       * Constant: Static text that appears on every certificate.
-	   * **Styling Options**: Each text block supports individual settings for font, size, color, and formatting (Bold, Italic, Underline).
-	   * Reordering: A simple up/down movement system to change the stacking order of text blocks.
-	
+### 5. Multi-Platform Session State Persistence
+* **Automatic State Recovery:** The entire workspace (loaded templates, coordinate boxes, custom font registries, text blocks, data sources, and export preferences) is saved to standard OS user data directories (`mcg_session_state.json`).
+* **Debounced Disk I/O:** State saves are debounced to guarantee zero input lag during typing.
+* **Safe Migration:** Automatically detects and migrates legacy session files.
 
-  4. Data Integration & Bulk Export
-	   * File Support: Import data from CSV or Excel (.xlsx, .xls).
-	   * **Flexible Output**:
-	       * Single File: Generate one large PDF containing all certificates.
-	       * Individual Files: Generate a separate PDF for each row of data.
-	   * Smart Naming: Choose a column from the data (like "Name" or "ID") to automatically name the individual exported PDF files.
+# Running & Building from Source
 
+### Prerequisites
+- Python 3.9+ (Python 3.10 – 3.13 recommended)
+- `pip` package manager
 
-  5. Session Persistence
-	   * **Auto-Save/Load**: The application remembers your entire configuration—including file paths, font selections, text blocks, and coordinates—across sessions. If you close MCG, it will restore your exact
-	     progress when reopened.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/KaziRifatMorshed/Mass-Certificate-Generator-MCG-gh-Public.git
+cd Mass-Certificate-Generator-MCG-gh-Public/MassCertificateGenerator-MCG
+```
 
-# Documentation
+### 2. Setup Virtual Environment
+```bash
+python3 -m venv .venv
+source .venv/bin/activate       # On Linux/macOS
+# .venv\Scripts\activate        # On Windows
+```
 
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
+### 4. Run the Application
+```bash
+python main.py
+```
 
-## Run/compile from the source code
+### 5. Building Standalone Binaries & Installers
 
-You need to have Python 3.8 or higher installed on your system.
-You also need to have **pip** (Python package installer) installed. It usually comes with Python installations.
+MCG includes unified build scripts supporting **Nuitka** (recommended) and **PyInstaller**:
 
-It is suggested to create a virtual environment for this purpose (using MCG in your machine).
+```bash
+# Build standalone Linux/Windows binary with Nuitka (default)
+python build_package.py
+
+# Or build with PyInstaller
+python build_package.py pyinstaller
+```
+
+On Windows, you can also run:
+```bat
+build_windows.bat
+```
+*(If Inno Setup 6 is installed, it will automatically compile the Windows Setup installer in `dist/installer/`.)*
 
 # Roadmap
 
-- [x] Change Debug Mode
-- [x] Single File Output
-- [x] Individual Files Output
-- [x] Change Paper Size (Dynamic, any size)
-- [x] Change Paper Orientation
-- [x] Change Output Format
-- [x] Change Output File Name (based on variables)
-- [x] Change Output Path
-- [x] Change Template Path
-- [x] Change Data Path
-- [x] PDF, PNG, JPEG output
-- [ ] Improve UX
-- [ ] Add more instructions in UI (like template size is dynamic)
-- [ ] Auto generate certificate verifications credentials
-- [ ] Add QR code to certificate for scanning
-- [ ] Auto update notifier
-- [ ] Auto update manager
-- [ ] Android Support
-- [ ] MacOS Support
-## Contribution
+- [x] Change Debug Mode (Preview-only, non-destructive export)
+- [x] Single Combined File Output
+- [x] Individual File Output with dynamic file naming
+- [x] Dynamic Paper Size & Orientation (any PDF dimensions)
+- [x] Multi-format export (PDF, PNG, JPEG)
+- [x] Fully event-driven font and text sync (no manual save buttons)
+- [x] Automated font embedding restriction sanitization (.ttf, .otf, .ttc)
+- [x] Cross-platform build script (Nuitka & PyInstaller) + Inno Setup installer
+- [x] Arch User Repository (AUR) packaging
+- [x] Self-documenting user AppData session persistence
+- [ ] QR code generation and certificate verification credentials
+- [ ] Auto-update notifier and updater
+- [ ] macOS installer bundle (.dmg)
+- [ ] Android companion app
 
-If you want to contribute, Fork it, Work on your own repo and Push it!
+# Authors & Acknowledgements
 
-# Authors and acknowledgement
+### Author
+- **Kazi Rifat Morshed**
+- Discipline: Computer Science and Engineering, [Khulna University](https://www.ku.ac.bd)
+- Email: [rifat230220@cseku.ac.bd](mailto:rifat230220@cseku.ac.bd)
+- Website: [https://kazirifatmorshed.github.io](https://kazirifatmorshed.github.io)
 
-## Author
-
-- **Name**: Kazi Rifat Morshed
-- **Affiliation**: Computer Science and Engineering Discipline
-- **Alma Mater**: [Khulna University](https://www.ku.ac.bd)
-- **Email**: rifat230220@cseku.ac.bd
-- **Website**: [https://kazirifatmorshed.github.io](https://kazirifatmorshed.github.io)
-
-## Acknowledgment
-
-- [pymupdf](https://pymupdf.readthedocs.io/en/latest/)
-- [qt](https://qt.io/)
-- [Github Copilot](), [Gemini]()
+### Acknowledgements & Dependencies
+- [PyMuPDF](https://pymupdf.readthedocs.io/en/latest/) – Ultra-fast PDF rendering and document manipulation
+- [PySide6 / Qt](https://wiki.qt.io/Qt_for_Python) – Modern cross-platform graphical user interface
+- [pandas](https://pandas.pydata.org/) & [openpyxl](https://openpyxl.readthedocs.io/) – Robust spreadsheet and CSV ingestion
 
 # License
 
-The Apache License 2.0 is a permissive open-source license that allows users to use, modify, and distribute software with minimal restrictions. It requires that any distributed modifications include a notice of changes and maintain the original copyright and license notices.
-
-# Project status
-
-First release: 1 May 2025  
-Current Status: GUI implementation during Ramadan 2026.
+Distributed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
