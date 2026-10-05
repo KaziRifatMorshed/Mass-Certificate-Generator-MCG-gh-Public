@@ -1,0 +1,12 @@
+/.idea
+/__pycache__
+.idea/Mass-Certificate-Generator.iml
+.idea/misc.xml
+*.kate-swp
+/MassCertificateGenerator-MCG/.buildozer
+session_state.json
+mcg_session_state.json
+MassCertificateGenerator-MCG/myMCG.bin
+MassCertificateGenerator-MCG/nuitka-crash-report.xml
+/MassCertificateGenerator-MCG/output
+/MassCertificateGenerator-MCG/.qtcreator
